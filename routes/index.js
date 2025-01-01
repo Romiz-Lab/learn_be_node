@@ -13,5 +13,7 @@ router.post("/login", validatorLogin, loginController.login)
 // user routes
 router.get("/admin/users", verifyToken, userController.findUsers)
 router.post("/admin/users", verifyToken, validateUser, userController.createUser)
+router.get("/admin/users/:id", verifyToken, userController.findUserById)
+router.put("/admin/users/:id", verifyToken, validateUser, userController.updateUser)
 
 module.exports = router
